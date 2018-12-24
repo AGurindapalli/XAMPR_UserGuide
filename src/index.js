@@ -1,14 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import AppConfig from "./Config/App";
+import { Provider } from "react-redux";
+import { appStore } from "../Redux/Store/index";
 
 import "./styles.css";
 
+const store = appStore();
+
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <AppConfig />
-    </div>
+    </Provider>
   );
 }
 
